@@ -1,7 +1,13 @@
-import { MapView } from '../components';
+import { BtnMyLocation, MapView, SearchBar } from '../components';
 
 const HomeScreen = () => {
-	return <MapView />;
+	return (
+		<div>
+			<MapView />
+			<BtnMyLocation />
+			<SearchBar />
+		</div>
+	);
 };
 
 export default HomeScreen;
