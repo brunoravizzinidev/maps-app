@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { MapContext } from '../context/map/MapContext';
 import { PlacesContext } from '../context/places/PlacesContext';
 export const BtnMyLocation = () => {
-	const { map, isMapReady } = useContext(MapContext);
+	const { map, isMapReady, kms, minutes } = useContext(MapContext);
 	const { userLocation } = useContext(PlacesContext);
 
 	const onClick = () => {
@@ -16,9 +16,7 @@ export const BtnMyLocation = () => {
 	};
 
 	return (
-		<button
-			className="btn btn-primary"
-			onClick={onClick}
+		<div
 			style={{
 				position: 'fixed',
 				top: '20px',
@@ -26,7 +24,23 @@ export const BtnMyLocation = () => {
 				zIndex: 999,
 			}}
 		>
-			Mi Ubicación
-		</button>
+			<button className="btn btn-primary" onClick={onClick}>
+				Mi Ubicación
+			</button>
+			{kms && (
+				<div
+					style={{
+						backgroundColor: 'rgba(255,255,255,0.6)',
+						textAlign: 'center',
+						borderRadius: 10,
+						padding: 20,
+					}}
+				>
+					Distancia: {kms} kms.
+					<br />
+					Tiempo: {minutes} min.
+				</div>
+			)}
+		</div>
 	);
 };

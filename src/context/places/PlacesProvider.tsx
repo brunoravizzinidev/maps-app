@@ -2,7 +2,6 @@ import { useEffect, useReducer } from 'react';
 import { PlacesContext } from './PlacesContext';
 import { placesReducer } from './placesReducer';
 import { getUserLocation } from '../../helpers/getUserLocation';
-import { type } from 'os';
 import { searchApi } from '../../apis';
 import { PlacesResponse, Feature } from '../../interfaces/places';
 
